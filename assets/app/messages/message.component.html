@@ -1,11 +1,10 @@
-<input type="text" [(ngModel)]="message.content">
-<article class="panel panel-default">
+<article class="panel panel-default" [ngStyle]="{backgroundColor: color}" (mouseenter)="onHover()">
     <div class="panel-body">
-        {{ message.content }}
+        {{ messageSingle.content }}
     </div>
     <footer class="panel-footer">
         <div class="author">
-            {{ message.username }}
+            {{ messageSingle.username }}
         </div>
         <div class="config">
             <a href="#" (click)="onEdit()">Edit</a>

@@ -27,10 +27,18 @@ import { Input, Output, EventEmitter } from "@angular/core";
 })
 
 export class MessageComponent{
-    @Input('InputMessage') message: Message;
-    @Output() editClicked = new EventEmitter<string>();
+    @Input() 
+    messageSingle: Message;
+    color: string = 'red';
+
+    @Output() 
+    editClicked: EventEmitter<string> = new EventEmitter<string>();
 
     onEdit() {
         this.editClicked.emit('value');
+    }
+
+    onHover() {
+        this.color = 'green';
     }
 }
