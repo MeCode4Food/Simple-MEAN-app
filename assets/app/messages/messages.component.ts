@@ -4,17 +4,17 @@ import { Component } from "@angular/core";
     selector:"app-messages",
     template:`
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="">
                 <app-message-input></app-message-input>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="">
                 <app-message-list></app-message-list>
             </div>
         </div>
-    `
+    `    
 })
 
 export class MessagesComponent {

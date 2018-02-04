@@ -6,11 +6,11 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 @Component({
     selector: 'app-message-list',
     template: `
-        <div class="col-md-8 cold-md-offset-2">
+        <div class="col-md-8 col-md-offset-2">
             <app-message 
                 *ngFor="let message of messages" 
                 [messageSingle]="message" 
-                (editClicked)="addMessage($event)"
+                (editClicked)="message.content = $event"
             ></app-message>
         </div>
     `
@@ -25,5 +25,4 @@ export class MessageListComponent implements OnInit{
     ngOnInit(): void {
         this.messages = this.messageService.getMessage();
     }
-
 }
