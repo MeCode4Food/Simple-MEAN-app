@@ -7,6 +7,10 @@ import { MessageService } from "./message.service";
     selector: 'app-message',
     templateUrl: './message.component.html',
     styles: [`
+        .hovered {
+            font-style: normal;
+        }
+
         .author {
             display: inline-block;
             font-style: italic;
@@ -28,6 +32,8 @@ import { MessageService } from "./message.service";
 })
 
 export class MessageComponent{
+    isHovered: boolean = false;
+
     @Input() 
     messageSingle: Message;
     color: string = 'red';
@@ -46,6 +52,6 @@ export class MessageComponent{
     }
 
     onHover() {
-        this.color = 'green';
+        this.isHovered = true;
     }
 }

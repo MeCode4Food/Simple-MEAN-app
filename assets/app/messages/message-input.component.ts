@@ -15,7 +15,11 @@ export class MessageInputComponent{
 
     onSubmit(form: NgForm) {
         const message: Message = new Message(form.value.content, 'CK');
-        this.messageService.addMessage(message);
+        this.messageService.addMessage(message)
+            .subscribe(
+                data => console.log(data),
+                error => console.log(error)
+            );
         form.resetForm();
     }
 }
