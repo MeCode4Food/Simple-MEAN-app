@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Message } from "./message.model";
-import { Input, Output, EventEmitter } from "@angular/core";
+import { Input } from "@angular/core";
 import { MessageService } from "./message.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { MessageService } from "./message.service";
     templateUrl: './message.component.html',
     styles: [`
         .hovered {
-            font-style: normal;
+            font-weight: normal;
         }
 
         .author {
@@ -36,15 +36,12 @@ export class MessageComponent{
 
     @Input() 
     messageSingle: Message;
-    color: string = 'red';
 
-    @Output() 
-    editClicked: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(private messsageService: MessageService){}
 
     onEdit() {
-        this.editClicked.emit('edit called');
+        this.messsageService.editMessage(this.messageSingle);
     }
 
     onDelete(){
@@ -53,5 +50,9 @@ export class MessageComponent{
 
     onHover() {
         this.isHovered = true;
+    }
+
+    getFontStyle() {
+        return this.isHovered ? "normal" : "bold";
     }
 }

@@ -10,7 +10,6 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
             <app-message 
                 *ngFor="let message of messages" 
                 [messageSingle]="message" 
-                (editClicked)="message.content = $event"
             ></app-message>
         </div>
     `

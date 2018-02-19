@@ -1,5 +1,5 @@
 <article class="panel panel-default" [ngStyle]="{backgroundColor: color}" (mouseenter)="onHover()">
-    <div class="panel-body" [class.hovered] = "isHovered" style = "{ font-style: normal }">
+    <div class="panel-body" [style.font-weight]="getFontStyle()">
         {{ messageSingle.content }}
     </div>
     <footer class="panel-footer">
